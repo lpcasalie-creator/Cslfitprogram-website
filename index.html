@@ -177,6 +177,7 @@
     .hero-ctas {
       margin-top: 3rem;
       display: flex;
+      flex-wrap: wrap;
       gap: 1rem;
       opacity: 0;
       animation: fadeUp 0.8s 0.8s forwards;
@@ -192,6 +193,7 @@
       text-transform: uppercase;
       padding: 1rem 2.5rem;
       text-decoration: none;
+      white-space: nowrap;
       transition: background 0.2s, transform 0.15s;
     }
 
@@ -207,6 +209,7 @@
       text-transform: uppercase;
       padding: 1rem 2.5rem;
       text-decoration: none;
+      white-space: nowrap;
       transition: border-color 0.2s, color 0.2s, transform 0.15s;
     }
 
@@ -1114,8 +1117,7 @@
       #hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
       .hero-left { padding: 9rem 2rem 5rem; }
-      .hero-ctas { flex-wrap: wrap; }
-      .btn-primary, .btn-ghost { white-space: nowrap; }
+      .btn-primary, .btn-ghost { white-space: normal; }
       section { padding: 5rem 2rem; }
       #about { grid-template-columns: 1fr; gap: 3rem; }
       #stats { grid-template-columns: 1fr 1fr; }
@@ -1156,7 +1158,7 @@
       Más de 18 años transformando atletas y entrenadores a través de metodologías de élite. CrossFit, fuerza olímpica y rendimiento humano.
     </p>
     <div class="hero-ctas">
-      <a href="#program" class="btn-primary">Agenda tu 1:1</a>
+      <a href="#program" class="btn-primary">Agenda tu Personalizado 1:1</a>
       <a href="https://cslfit.netlify.app" target="_blank" class="btn-ghost">📱 Training App</a>
     </div>
   </div>
