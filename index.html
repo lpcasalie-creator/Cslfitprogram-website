@@ -596,9 +596,37 @@
     }
 
     .program-item.open .prog-expand {
-      max-height: 200px;
+      max-height: 420px;
       padding: 1.5rem 0 0.5rem calc(80px + 2rem);
       border-top: 1px solid var(--border);
+    }
+
+    .prog-mode-toggle {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .prog-mode-btn {
+      font-family: var(--font-condensed);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.1rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+
+    .prog-mode-btn:hover { color: var(--text); border-color: #666; }
+
+    .prog-mode-btn.active {
+      background: var(--accent);
+      color: var(--black);
+      border-color: var(--accent);
     }
 
     .prog-price-reveal {
@@ -1092,6 +1120,9 @@
       .stat-block { padding: 2.5rem 1rem; border-right: none; border-bottom: 1px solid var(--border); }
       .stat-num { font-size: clamp(2.2rem, 10vw, 3.5rem); }
       .program-item { grid-template-columns: 50px 1fr auto; padding: 1.5rem 1.5rem; }
+      .prog-expand { padding-left: calc(50px + 1rem); }
+      .program-item.open .prog-expand { padding-left: calc(50px + 1rem); max-height: 560px; }
+      .prog-mode-toggle { flex-wrap: wrap; }
       #app { padding: 5rem 2rem !important; }
       .app-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -1439,13 +1470,24 @@
       <span class="prog-num">01</span>
       <div class="prog-info">
         <div class="prog-title">1:1 Personal Training</div>
-        <div class="prog-sub">Sesiones individuales adaptadas a tus objetivos</div>
+        <div class="prog-sub">Presencial u online — sesiones individuales adaptadas a tus objetivos</div>
       </div>
       <span class="prog-arrow">+</span>
       <div class="prog-expand">
-        <div class="prog-price-reveal">USD <span>80</span><small>/class</small></div>
-        <p class="prog-detail">Sesión de entrenamiento individual completamente personalizada según tu nivel y metas. Ideal para atletas que buscan mejorar técnica, rendimiento y recibir retroalimentación directa de un coach.</p>
-        <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%201:1%20Personal%20Training" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+        <div class="prog-mode-toggle" onclick="event.stopPropagation()">
+          <button type="button" class="prog-mode-btn active" onclick="setProgMode(event, this, 'presencial')">Presencial</button>
+          <button type="button" class="prog-mode-btn" onclick="setProgMode(event, this, 'online')">Online</button>
+        </div>
+        <div class="prog-mode-panel" data-mode="presencial">
+          <div class="prog-price-reveal">USD <span>80</span><small>/clase</small></div>
+          <p class="prog-detail">Sesión de entrenamiento individual completamente personalizada según tu nivel y metas, cara a cara conmigo. Ideal para atletas que buscan mejorar técnica, rendimiento y recibir retroalimentación directa de un coach.</p>
+          <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%201:1%20Personal%20Training%20Presencial" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+        </div>
+        <div class="prog-mode-panel" data-mode="online" style="display:none">
+          <div class="prog-price-reveal">USD <span>40</span><small>/sesión</small></div>
+          <p class="prog-detail">Sesión de entrenamiento individual personalizada vía videollamada — mismo seguimiento y ajuste técnico que el 1:1 presencial, ideal si vives fuera de Chile o prefieres entrenar a distancia.</p>
+          <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%201:1%20Personal%20Training%20Online" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+        </div>
       </div>
     </div>
     <div class="program-item" onclick="toggleProgram(this)">
@@ -1570,6 +1612,13 @@
     const isOpen = el.classList.contains('open');
     document.querySelectorAll('.program-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) el.classList.add('open');
+  }
+
+  function setProgMode(ev, btn, mode) {
+    ev.stopPropagation();
+    const item = btn.closest('.program-item');
+    item.querySelectorAll('.prog-mode-btn').forEach(b => b.classList.toggle('active', b === btn));
+    item.querySelectorAll('.prog-mode-panel').forEach(p => p.style.display = (p.dataset.mode === mode ? '' : 'none'));
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(link => {
