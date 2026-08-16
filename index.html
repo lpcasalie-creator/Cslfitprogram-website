@@ -509,78 +509,6 @@
       .about-cred-item { width: 50%; border-bottom: 1px solid var(--border); }
     }
 
-    /* ── SERVICES ── */
-    #services {
-      border-top: 1px solid var(--border);
-      background: var(--dark);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-    }
-
-    .service-card {
-      background: var(--card);
-      padding: 3rem 2.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-      display: block;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .service-card:hover { background: #1e1e1e; }
-
-    .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 2px;
-      background: var(--accent);
-      transition: width 0.4s ease;
-    }
-
-    .service-card:hover::after { width: 100%; }
-
-    .service-number {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      color: rgba(212,255,0,0.15);
-      line-height: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    .service-title {
-      font-family: var(--font-condensed);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    .service-desc {
-      font-size: 0.9rem;
-      line-height: 1.75;
-      color: #C0C0C0;
-    }
-
-    .service-tag {
-      display: inline-block;
-      margin-top: 1.5rem;
-      font-family: var(--font-condensed);
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-    }
-
     /* ── STATS ── */
     #stats {
       border-top: 1px solid var(--border);
@@ -1158,7 +1086,6 @@
       .hero-left { padding: 9rem 2rem 5rem; }
       section { padding: 5rem 2rem; }
       #about { grid-template-columns: 1fr; gap: 3rem; }
-      .services-grid { grid-template-columns: 1fr; }
       #stats { grid-template-columns: 1fr 1fr; }
       .stat-block { padding: 2.5rem 1rem; border-right: none; border-bottom: 1px solid var(--border); }
       .stat-num { font-size: clamp(2.2rem, 10vw, 3.5rem); }
@@ -1176,7 +1103,6 @@
   <div class="nav-logo">LC</div>
   <ul class="nav-links">
     <li><a href="#about">Sobre mí</a></li>
-    <li><a href="#services">Servicios</a></li>
     <li><a href="#program">Programa</a></li>
     <li><a href="https://cslapp.netlify.app" target="_blank">📱 Training App</a></li>
     <li><a href="#contact">Contacto</a></li>
@@ -1259,32 +1185,6 @@
     </blockquote>
   </div>
 
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <p class="section-label">Lo que ofrezco</p>
-  <h2 class="section-title">Servicios<br><em>de élite</em></h2>
-  <div class="services-grid">
-    <a href="#program" class="service-card">
-      <div class="service-number">01</div>
-      <div class="service-title">Coaching Personal</div>
-      <p class="service-desc">Sesiones 1:1 diseñadas para tu nivel, objetivos y disponibilidad. Programa individualizado con seguimiento continuo y ajustes en tiempo real.</p>
-      <span class="service-tag">→ Ver planes y precios</span>
-    </a>
-    <a href="#program" class="service-card">
-      <div class="service-number">02</div>
-      <div class="service-title">CSL Fit Program</div>
-      <p class="service-desc">Programación de alto rendimiento para atletas de CrossFit. Periodización inteligente, trabajo técnico y acondicionamiento metabólico de élite.</p>
-      <span class="service-tag">→ Ver planes y precios</span>
-    </a>
-    <a href="#program" class="service-card">
-      <div class="service-number">03</div>
-      <div class="service-title">Seminarios & Clínicas</div>
-      <p class="service-desc">Formación especializada en halterofilia olímpica y metodología CrossFit para coaches y atletas que quieren elevar su nivel técnico.</p>
-      <span class="service-tag">→ Ver planes y precios</span>
-    </a>
-  </div>
 </section>
 
 <!-- STATS -->
