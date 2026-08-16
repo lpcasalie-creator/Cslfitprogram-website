@@ -1099,6 +1099,15 @@
 
     .contact-link:hover { color: var(--accent); border-color: var(--accent); }
 
+    .contact-link.primary {
+      background: var(--accent);
+      color: var(--black);
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contact-link.primary:hover { background: #fff; color: var(--black); border-color: #fff; }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -1630,14 +1639,14 @@
   <h2 class="section-title">Hablemos<br><em>hoy</em></h2>
   <p>Cuéntame tus objetivos y encontremos el camino para que alcances tu máximo potencial.</p>
   <div class="contact-links">
+    <a href="https://wa.me/56977095712?text=Hola%20Luis%2C%20quiero%20info%20sobre%20el%20programa%20CSL%20Fit" class="contact-link primary" target="_blank">
+      <span>💬</span> Escríbeme por WhatsApp
+    </a>
     <a href="https://instagram.com/Luis_casali" class="contact-link" target="_blank">
       <span>📸</span> @Luis_casali
     </a>
     <a href="mailto:Lpcasalie@gmail.com" class="contact-link">
       <span>✉️</span> Lpcasalie@gmail.com
-    </a>
-    <a href="https://wa.me/56977095712" class="contact-link" target="_blank">
-      <span>💬</span> WhatsApp
     </a>
   </div>
 </section>
