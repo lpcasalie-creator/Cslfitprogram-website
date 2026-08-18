@@ -30,6 +30,65 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;1,300&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://cslfitprogram.com/#website",
+        "url": "https://cslfitprogram.com/",
+        "name": "CSL Fit Program",
+        "inLanguage": "es-CL"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://cslfitprogram.com/#luis-casali",
+        "name": "Luis Casali",
+        "url": "https://cslfitprogram.com/",
+        "jobTitle": "Coach de CrossFit y Halterofilia Olímpica",
+        "image": "https://cslfitprogram.com/assets/images/about-photo.webp",
+        "sameAs": ["https://instagram.com/Luis_casali"],
+        "knowsAbout": ["CrossFit", "Halterofilia Olímpica", "HYROX", "Preparación Física"],
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "CrossFit Level 3 Trainer (CF-L3)" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Certified CrossFit Trainer (CCFT)" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "USA Weightlifting Level 1 (USAW L1)" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "HYROX Official Coach" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Preparador Físico, Duoc UC" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "1:1 Personal Training Presencial",
+        "serviceType": "Personal Training",
+        "provider": { "@id": "https://cslfitprogram.com/#luis-casali" },
+        "areaServed": "CL",
+        "offers": {
+          "@type": "Offer",
+          "price": "80",
+          "priceCurrency": "USD",
+          "url": "https://cslfitprogram.com/#program"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "1:1 Personal Training Online",
+        "serviceType": "Personal Training",
+        "provider": { "@id": "https://cslfitprogram.com/#luis-casali" },
+        "areaServed": { "@type": "Place", "name": "Worldwide" },
+        "offers": {
+          "@type": "Offer",
+          "price": "40",
+          "priceCurrency": "USD",
+          "url": "https://cslfitprogram.com/#program"
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
