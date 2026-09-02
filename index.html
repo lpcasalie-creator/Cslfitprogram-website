@@ -1076,6 +1076,54 @@
       .cert-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── HOW IT WORKS ── */
+    #how {
+      border-top: 1px solid var(--border);
+      padding: 7rem 4rem;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .how-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .how-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: rgba(204,255,0,0.3);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    .how-title {
+      font-family: var(--font-condensed);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.7rem;
+    }
+
+    .how-desc {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #C0C0C0;
+    }
+
+    @media (max-width: 900px) {
+      .how-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── CONTACT ── */
     #contact {
       border-top: 1px solid var(--border);
@@ -1642,6 +1690,29 @@
       <div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.7rem 0;display:flex;justify-content:space-between;margin-bottom:1rem"><span style="color:var(--text);font-weight:600">Clean</span><span style="color:#888;font-size:.85rem">¾ BW</span></div>
       <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--accent);text-align:center">20:00</div>
       <div style="font-family:var(--font-condensed);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#555;text-align:center">Time Cap</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <p class="section-label">Sin vueltas</p>
+  <h2 class="section-title">Cómo<br><em>funciona</em></h2>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-title">Escríbeme</div>
+      <div class="how-desc">Cuéntame tu objetivo, tu nivel y qué modalidad te interesa — presencial, a domicilio u online.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-title">Coordinamos</div>
+      <div class="how-desc">Vemos juntos tu disponibilidad y la mía, y armamos el plan que más te acomode.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-title">Empezamos</div>
+      <div class="how-desc">Arrancas tu programación 100% personalizada, con seguimiento y ajustes en cada sesión.</div>
     </div>
   </div>
 </section>
