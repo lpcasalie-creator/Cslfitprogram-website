@@ -1,7 +1,7 @@
 {
-  "name": "CSL Cadera — Evaluación de cadera",
-  "short_name": "CSL Cadera",
-  "description": "Evaluación de cadera para coaches: ROM, fuerza, tests especiales, funcionales y protocolo.",
+  "name": "CSL Kine — Evaluación kinésica",
+  "short_name": "CSL Kine",
+  "description": "Evaluación kinésica y biomecánica por región: ROM, fuerza, tests especiales, funcionales, LSI y protocolo.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",

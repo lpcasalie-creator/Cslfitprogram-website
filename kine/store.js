@@ -3,7 +3,7 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY } from './config.js';
 
 export const mode = SUPABASE_URL && SUPABASE_ANON_KEY ? 'cloud' : 'local';
 
-const LS_KEY = 'csl-cadera-v1';
+const LS_KEY = 'csl-kine-v1';
 let sb = null;
 
 export async function init() {
@@ -39,9 +39,9 @@ export async function signOut() {
 function load() {
   try {
     const db = JSON.parse(localStorage.getItem(LS_KEY));
-    if (db && Array.isArray(db.athletes) && Array.isArray(db.assessments)) return db;
+    if (db && Array.isArray(db.patients) && Array.isArray(db.assessments)) return db;
   } catch { /* datos corruptos o storage bloqueado */ }
-  return { athletes: [], assessments: [] };
+  return { patients: [], assessments: [] };
 }
 
 function persist(db) {
@@ -60,7 +60,7 @@ export function exportLocal() {
 
 export function importLocal(json) {
   const db = JSON.parse(json);
-  if (!Array.isArray(db.athletes) || !Array.isArray(db.assessments)) throw new Error('Archivo inválido');
+  if (!Array.isArray(db.patients) || !Array.isArray(db.assessments)) throw new Error('Archivo inválido');
   persist(db);
 }
 
@@ -69,46 +69,46 @@ function unwrap({ data, error }) {
   return data;
 }
 
-// ---------- Atletas ----------
-const ATHLETE_FIELDS = ['id', 'name', 'birthdate', 'sex', 'sport', 'dominant_side', 'leg_length_r', 'leg_length_l', 'notes'];
+// ---------- Pacientes ----------
+const PATIENT_FIELDS = ['id', 'name', 'birthdate', 'sex', 'sport', 'dominant_side', 'leg_length_r', 'leg_length_l', 'notes'];
 
-function cleanAthlete(a) {
+function cleanPatient(a) {
   const row = {};
-  for (const f of ATHLETE_FIELDS) row[f] = a[f] === '' || a[f] === undefined ? null : a[f];
+  for (const f of PATIENT_FIELDS) row[f] = a[f] === '' || a[f] === undefined ? null : a[f];
   row.id ||= crypto.randomUUID();
   return row;
 }
 
-export async function listAthletes() {
-  if (mode === 'local') return load().athletes.sort((a, b) => a.name.localeCompare(b.name, 'es'));
-  return unwrap(await sb.from('athletes').select('*').order('name'));
+export async function listPatients() {
+  if (mode === 'local') return load().patients.sort((a, b) => a.name.localeCompare(b.name, 'es'));
+  return unwrap(await sb.from('patients').select('*').order('name'));
 }
 
-export async function getAthlete(id) {
-  if (mode === 'local') return load().athletes.find((a) => a.id === id) ?? null;
-  return unwrap(await sb.from('athletes').select('*').eq('id', id).maybeSingle());
+export async function getPatient(id) {
+  if (mode === 'local') return load().patients.find((a) => a.id === id) ?? null;
+  return unwrap(await sb.from('patients').select('*').eq('id', id).maybeSingle());
 }
 
-export async function saveAthlete(a) {
-  const row = cleanAthlete(a);
+export async function savePatient(a) {
+  const row = cleanPatient(a);
   if (mode === 'local') {
     const db = load();
-    upsertLocal(db.athletes, row);
+    upsertLocal(db.patients, row);
     persist(db);
     return row;
   }
-  return unwrap(await sb.from('athletes').upsert(row).select().single());
+  return unwrap(await sb.from('patients').upsert(row).select().single());
 }
 
-export async function deleteAthlete(id) {
+export async function deletePatient(id) {
   if (mode === 'local') {
     const db = load();
-    db.athletes = db.athletes.filter((a) => a.id !== id);
-    db.assessments = db.assessments.filter((x) => x.athlete_id !== id);
+    db.patients = db.patients.filter((a) => a.id !== id);
+    db.assessments = db.assessments.filter((x) => x.patient_id !== id);
     persist(db);
     return;
   }
-  unwrap(await sb.from('athletes').delete().eq('id', id));
+  unwrap(await sb.from('patients').delete().eq('id', id));
 }
 
 // ---------- Evaluaciones ----------
@@ -116,9 +116,9 @@ function byDateDesc(a, b) {
   return b.date.localeCompare(a.date) || (b.created_at || '').localeCompare(a.created_at || '');
 }
 
-export async function listAssessments(athleteId) {
-  if (mode === 'local') return load().assessments.filter((x) => x.athlete_id === athleteId).sort(byDateDesc);
-  return unwrap(await sb.from('assessments').select('*').eq('athlete_id', athleteId)
+export async function listAssessments(patientId) {
+  if (mode === 'local') return load().assessments.filter((x) => x.patient_id === patientId).sort(byDateDesc);
+  return unwrap(await sb.from('assessments').select('*').eq('patient_id', patientId)
     .order('date', { ascending: false }).order('created_at', { ascending: false }));
 }
 
@@ -130,7 +130,8 @@ export async function getAssessment(id) {
 export async function saveAssessment(x) {
   const row = {
     id: x.id || crypto.randomUUID(),
-    athlete_id: x.athlete_id,
+    patient_id: x.patient_id,
+    region: x.region,
     date: x.date,
     data: x.data || {},
     notes: x.notes || null,

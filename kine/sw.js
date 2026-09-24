@@ -1,8 +1,10 @@
 // Service worker: app shell con stale-while-revalidate. Las llamadas a Supabase van siempre a red.
-const CACHE = 'csl-cadera-v1';
+const CACHE = 'csl-kine-v1';
 const SHELL = [
   './', './index.html', './styles.css', './app.js', './store.js', './analysis.js',
-  './tests.js', './protocols.js', './config.js', './manifest.webmanifest',
+  './regions/index.js', './regions/common.js', './regions/hip.js', './regions/knee.js',
+  './regions/shoulder.js', './regions/ankle.js', './regions/lumbar.js', './regions/cervical.js',
+  './regions/elbow.js', './regions/wrist.js', './config.js', './manifest.webmanifest',
   './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png',
 ];
 
