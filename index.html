@@ -1147,6 +1147,105 @@
       .how-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── GUÍA / CAPTURA ── */
+    #guia {
+      border-top: 1px solid var(--border);
+      padding: 7rem 4rem;
+    }
+
+    .guia-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .guia-cover img {
+      width: 100%;
+      display: block;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .guia-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .guia-list li {
+      display: flex;
+      gap: 0.7rem;
+      font-size: 0.92rem;
+      color: #BBBBBB;
+      line-height: 1.6;
+    }
+
+    .guia-list li::before {
+      content: '›';
+      color: var(--accent);
+      font-weight: 700;
+      flex: none;
+    }
+
+    .guia-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      max-width: 420px;
+    }
+
+    .guia-form input[type="text"],
+    .guia-form input[type="email"] {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.95rem 1.1rem;
+      width: 100%;
+    }
+
+    .guia-form input::placeholder { color: #777; }
+
+    .guia-form input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .guia-form button {
+      background: var(--accent);
+      color: #0d0d0d;
+      border: none;
+      font-family: var(--font-condensed);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1.05rem 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .guia-form button:hover { background: #fff; transform: translateY(-2px); }
+
+    .guia-note {
+      font-size: 0.78rem;
+      color: #777;
+      line-height: 1.6;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 900px) {
+      .guia-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .guia-cover { max-width: 260px; margin: 0 auto; }
+      .guia-form { max-width: none; }
+    }
+
     /* ── CONTACT ── */
     #contact {
       border-top: 1px solid var(--border);
@@ -1752,6 +1851,38 @@ src="https://www.facebook.com/tr?id=984152100780445&amp;ev=PageView&amp;noscript
       <div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.7rem 0;display:flex;justify-content:space-between;margin-bottom:1rem"><span style="color:var(--text);font-weight:600">Clean</span><span style="color:#888;font-size:.85rem">¾ BW</span></div>
       <div style="font-family:var(--font-display);font-size:2.5rem;color:var(--accent);text-align:center">20:00</div>
       <div style="font-family:var(--font-condensed);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#555;text-align:center">Time Cap</div>
+    </div>
+  </div>
+</section>
+
+<!-- GUÍA GRATUITA -->
+<section id="guia">
+  <div class="guia-grid">
+    <div class="guia-cover">
+      <img src="assets/images/guia-portada.webp" loading="lazy" alt="Portada de la guía: Test de las 10 capacidades físicas" />
+    </div>
+    <div>
+      <p class="section-label">Descarga gratuita</p>
+      <h2 class="section-title" style="margin-bottom:1.2rem">Test de las 10<br><em>capacidades físicas</em></h2>
+      <p style="font-size:1rem;line-height:1.8;color:#CCCCCC">
+        El próximo salto en tu rendimiento casi nunca está donde ya eres bueno. Esta guía de 6 páginas te ayuda a encontrar en cuál de las diez capacidades estás más al debe.
+      </p>
+      <ul class="guia-list">
+        <li>Las diez capacidades explicadas, una por una</li>
+        <li>Una escala para puntuarte en cada una</li>
+        <li>Un radar en blanco para dibujar tu perfil completo</li>
+        <li>Tres preguntas para saber qué hacer con el resultado</li>
+      </ul>
+      <form name="guia-10-capacidades" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/gracias.html" class="guia-form">
+        <input type="hidden" name="form-name" value="guia-10-capacidades" />
+        <p hidden><label>No llenar este campo: <input name="bot-field" /></label></p>
+        <label for="guia-nombre" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Nombre</label>
+        <input id="guia-nombre" type="text" name="nombre" placeholder="Tu nombre" required />
+        <label for="guia-email" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Correo</label>
+        <input id="guia-email" type="email" name="email" placeholder="Tu correo" required />
+        <button type="submit">Descargar la guía →</button>
+      </form>
+      <p class="guia-note">Te escribo solo cuando tengo algo útil que compartir, y puedes salirte cuando quieras.</p>
     </div>
   </div>
 </section>
