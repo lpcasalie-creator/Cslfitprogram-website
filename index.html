@@ -773,6 +773,66 @@
       margin-top: 0.1rem;
     }
 
+    /* ── Cohorte vigente · contenido con fecha, revisar al cerrar cada cohorte ── */
+    .prog-cohorte {
+      border: 1px solid rgba(204, 255, 0, 0.38);
+      background: rgba(204, 255, 0, 0.07);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.4rem;
+      max-width: 520px;
+    }
+
+    .prog-cohorte .c-k {
+      font-family: var(--font-condensed);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .prog-cohorte .c-v {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      line-height: 1.05;
+      color: var(--text);
+      letter-spacing: 0.01em;
+    }
+
+    .prog-husos {
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(204, 255, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .prog-husos .hz {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-condensed);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #BBBBBB;
+    }
+
+    .prog-husos .hz b {
+      color: var(--accent);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .prog-cierre {
+      margin-top: 0.85rem;
+      font-size: 0.83rem;
+      color: #AAAAAA;
+    }
+
+    .prog-cierre b { color: var(--text); font-weight: 600; }
+
     .prog-temario-label {
       font-family: var(--font-condensed);
       font-weight: 700;
@@ -1825,11 +1885,22 @@ src="https://www.facebook.com/tr?id=984152100780445&amp;ev=PageView&amp;noscript
       <span class="prog-num">04</span>
       <div class="prog-info">
         <div class="prog-title">CSL Mentorías</div>
-        <div class="prog-sub">Programa de 12 semanas para formarte como coach — máximo 5 por grupo</div>
+        <div class="prog-sub">Programa de 12 semanas para formarte como coach — Cohorte 01 parte el 11 de noviembre</div>
       </div>
       <span class="prog-arrow">+</span>
       <div class="prog-expand"><div class="prog-expand-inner">
         <div class="prog-price-reveal">USD <span>160</span><small>/mes</small></div>
+        <!-- Cohorte vigente: actualizar o quitar al cerrar las postulaciones -->
+        <div class="prog-cohorte">
+          <div class="c-k">Cohorte 01 · Parte el</div>
+          <div class="c-v">Miércoles 11 de noviembre</div>
+          <div class="prog-husos">
+            <div class="hz"><span>Chile · Argentina</span><b>14:00</b></div>
+            <div class="hz"><span>Colombia · Ecuador</span><b>12:00</b></div>
+            <div class="hz"><span>Costa Rica</span><b>11:00</b></div>
+          </div>
+          <p class="prog-cierre">Postulaciones hasta el <b>lunes 9 de noviembre</b> · Máximo 5 coaches</p>
+        </div>
         <p class="prog-detail">Doce semanas, una sesión en vivo de una hora cada semana, con un máximo de 5 coaches por grupo y una tarea entre sesiones. Más de 40 cursos de certificación dictados para Burgener Strength en Latinoamérica respaldan este programa. Grabas un video la primera semana, lo revisamos a mitad de camino y lo comparas con el final: tu avance se mide, no se supone.</p>
         <p class="prog-temario-label">Cada sesión</p>
         <div class="prog-blocks">
@@ -1841,16 +1912,16 @@ src="https://www.facebook.com/tr?id=984152100780445&amp;ev=PageView&amp;noscript
         <p class="prog-temario-label">Las 12 semanas</p>
         <ul class="prog-temario">
           <li><span>01</span>Fitness y CrossFit</li>
-          <li><span>07</span>Escalamiento y seguridad</li>
           <li><span>02</span>Nutrición</li>
-          <li><span>08</span>Estructura de clase</li>
           <li><span>03</span>Enseñar, ver, corregir</li>
-          <li><span>09</span>Programación</li>
           <li><span>04</span>Squats</li>
-          <li><span>10</span>Weightlifting</li>
           <li><span>05</span>Presses</li>
-          <li><span>11</span>Gymnastics</li>
           <li><span>06</span>Deadlifts</li>
+          <li><span>07</span>Escalamiento y seguridad</li>
+          <li><span>08</span>Estructura de clase</li>
+          <li><span>09</span>Programación</li>
+          <li><span>10</span>Weightlifting</li>
+          <li><span>11</span>Gymnastics</li>
           <li><span>12</span>Integración final</li>
         </ul>
         <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20CSL%20Mentor%C3%ADas" data-programa="CSL Mentorías" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
