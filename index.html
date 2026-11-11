@@ -1500,9 +1500,10 @@ src="https://www.facebook.com/tr?id=984152100780445&amp;ev=PageView&amp;noscript
 <nav>
   <div class="nav-logo">LC</div>
   <ul class="nav-links">
-    <li><a href="#about">Sobre mí</a></li>
     <li><a href="#program">Programa</a></li>
-    <li><a href="https://cslfit.netlify.app" target="_blank">📱 Training App</a></li>
+    <li><a href="#how">Cómo funciona</a></li>
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#guia">Guía gratis</a></li>
     <li><a href="#contact">Contacto</a></li>
   </ul>
 </nav>
@@ -1563,6 +1564,138 @@ src="https://www.facebook.com/tr?id=984152100780445&amp;ev=PageView&amp;noscript
   </div>
 </div>
 
+<!-- PROGRAM -->
+<section id="program">
+  <div class="program-header">
+    <div>
+      <p class="section-label">CSL Fit Program</p>
+      <h2 class="section-title">Elige<br>tu <em>camino</em></h2>
+    </div>
+    <a href="#contact" class="btn-primary">Empezar ahora</a>
+  </div>
+  <div class="program-list">
+    <div class="program-item" onclick="toggleProgram(this)">
+      <span class="prog-num">01</span>
+      <div class="prog-info">
+        <div class="prog-title">1:1 Personal Training</div>
+        <div class="prog-sub">Presencial, a domicilio u online — sesiones individuales adaptadas a tus objetivos</div>
+      </div>
+      <span class="prog-arrow">+</span>
+      <div class="prog-expand"><div class="prog-expand-inner">
+        <div class="prog-mode-toggle" onclick="event.stopPropagation()">
+          <button type="button" class="prog-mode-btn active" onclick="setProgMode(event, this, 'presencial')">Presencial</button>
+          <button type="button" class="prog-mode-btn" onclick="setProgMode(event, this, 'online')">Online</button>
+        </div>
+        <div class="prog-mode-panel" data-mode="presencial">
+          <div class="prog-price-reveal">USD <span>60</span><small>/clase</small></div>
+          <p class="prog-detail">Sesión de entrenamiento individual completamente personalizada según tu nivel y metas, cara a cara conmigo — en mi box o a domicilio, según lo que te acomode. Escríbeme y vemos juntos tu disponibilidad y la mía. Consulta por planes de 8, 12 o más clases mensuales.</p>
+          <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%201:1%20Personal%20Training%20Presencial" data-programa="1:1 Presencial" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+        </div>
+        <div class="prog-mode-panel" data-mode="online" style="display:none">
+          <div class="prog-price-reveal">USD <span>40</span><small>/clase</small></div>
+          <p class="prog-detail">Sesión de entrenamiento individual personalizada vía videollamada — mismo seguimiento y ajuste técnico que el 1:1 presencial, ideal si vives fuera de Chile o prefieres entrenar a distancia. Consulta por planes de 8, 12 o más clases mensuales.</p>
+          <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%201:1%20Personal%20Training%20Online" data-programa="1:1 Online" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+        </div>
+      </div></div>
+    </div>
+    <div class="program-item" onclick="toggleProgram(this)">
+      <span class="prog-num">02</span>
+      <div class="prog-info">
+        <div class="prog-title">Weightlifting Focus</div>
+        <div class="prog-sub">Halterofilia olímpica — técnica y fuerza máxima</div>
+      </div>
+      <span class="prog-arrow">+</span>
+      <div class="prog-expand"><div class="prog-expand-inner">
+        <div class="prog-price-reveal">USD <span>100</span><small>/mes</small></div>
+        <p class="prog-detail">Planificación mensual enfocada en arranque y envión, más 2 videollamadas de 15 minutos para análisis técnico de tu video. Desarrolla potencia, técnica y fuerza con metodología Burgener Strength.</p>
+        <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%20Weightlifting%20Focus" data-programa="Weightlifting Focus" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+      </div></div>
+    </div>
+    <div class="program-item" onclick="toggleProgram(this)">
+      <span class="prog-num">03</span>
+      <div class="prog-info">
+        <div class="prog-title">CSL-Fit Program</div>
+        <div class="prog-sub">Programas de entrenamiento online para cada objetivo</div>
+      </div>
+      <span class="prog-arrow">+</span>
+      <div class="prog-expand"><div class="prog-expand-inner">
+        <div class="prog-price-reveal">USD <span>150</span><small>/mes</small></div>
+        <p class="prog-detail">Programación online diseñada para atletas y personas con distintos objetivos. Cada plan se adapta al área de entrenamiento elegida: Weightlifting, Gimnástica, HYROX, Pérdida de peso y más. Metodología estructurada, progresiva y respaldada por más de 18 años de experiencia en el fitness de alto rendimiento.</p>
+        <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%20CSL-Fit%20Program" data-programa="CSL-Fit Program" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+      </div></div>
+    </div>
+    <div class="program-item" onclick="toggleProgram(this)">
+      <span class="prog-num">04</span>
+      <div class="prog-info">
+        <div class="prog-title">CSL Mentorías</div>
+        <div class="prog-sub">Grupo de estudio de 12 semanas para coaches — nuevo grupo parte el 2 de diciembre</div>
+      </div>
+      <span class="prog-arrow">+</span>
+      <div class="prog-expand"><div class="prog-expand-inner">
+        <div class="prog-price-reveal">USD <span>99</span><small>/mes</small></div>
+        <!-- Grupo vigente: actualizar o quitar al cerrar las postulaciones -->
+        <div class="prog-cohorte">
+          <div class="c-k">Grupo de diciembre · Parte el</div>
+          <div class="c-v">Miércoles 2 de diciembre</div>
+          <div class="prog-husos">
+            <div class="hz"><span>Chile · Argentina</span><b>14:00</b></div>
+            <div class="hz"><span>Colombia · Ecuador</span><b>12:00</b></div>
+            <div class="hz"><span>Costa Rica</span><b>11:00</b></div>
+          </div>
+          <p class="prog-cierre">Postulaciones hasta el <b>lunes 30 de noviembre</b> · Máximo 5 coaches</p>
+        </div>
+        <p class="prog-detail">Doce semanas, una sesión en vivo de una hora cada semana, con un máximo de 5 coaches por grupo y una tarea entre sesiones. Siete de las doce semanas tienen detrás una certificación de CrossFit con el mismo nombre: Nutrition I, Teaching Movement, Scaling, Lesson Planning, Programming, Weightlifting L2 y Gymnastics. Grabas un video la primera semana, lo revisamos a mitad de camino y lo comparas con el final: tu avance se mide, no se supone. ¿Son varios coaches de un mismo box? Puedo abrir un grupo solo para ustedes, con un valor preferente — escríbeme y lo vemos.</p>
+        <p class="prog-temario-label">Cada sesión</p>
+        <div class="prog-blocks">
+          <div class="prog-block"><div class="t">Revisión de tarea</div></div>
+          <div class="prog-block"><div class="t">Contenido</div></div>
+          <div class="prog-block"><div class="t">Práctica y corrección</div></div>
+          <div class="prog-block"><div class="t">Cierre y tarea</div></div>
+        </div>
+        <p class="prog-temario-label">Las 12 semanas</p>
+        <ul class="prog-temario">
+          <li><span>01</span>Fitness y CrossFit</li>
+          <li><span>02</span>Nutrición</li>
+          <li><span>03</span>Enseñar, ver, corregir</li>
+          <li><span>04</span>Squats</li>
+          <li><span>05</span>Presses</li>
+          <li><span>06</span>Deadlifts</li>
+          <li><span>07</span>Escalamiento y seguridad</li>
+          <li><span>08</span>Estructura de clase</li>
+          <li><span>09</span>Programación</li>
+          <li><span>10</span>Weightlifting</li>
+          <li><span>11</span>Gymnastics</li>
+          <li><span>12</span>Integración final</li>
+        </ul>
+        <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20CSL%20Mentor%C3%ADas" data-programa="CSL Mentorías" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <p class="section-label">Sin vueltas</p>
+  <h2 class="section-title">Cómo<br><em>funciona</em></h2>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-title">Escríbeme</div>
+      <div class="how-desc">Cuéntame tu objetivo, tu nivel y qué modalidad te interesa — presencial, a domicilio u online.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-title">Coordinamos</div>
+      <div class="how-desc">Vemos juntos tu disponibilidad y la mía, y armamos el plan que más te acomode.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-title">Empezamos</div>
+      <div class="how-desc">Arrancas tu programación 100% personalizada, con seguimiento y ajustes en cada sesión.</div>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about">
   <div class="about-photo-wrap">
@@ -1604,56 +1737,6 @@ src="https://www.facebook.com/tr?id=984152100780445&amp;ev=PageView&amp;noscript
     <span class="stat-label">Certificación CrossFit</span>
   </div>
 </div>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <p class="section-label">En acción</p>
-  <h2 class="section-title">Galería<br><em>de momentos</em></h2>
-  <div class="gallery-track-wrap">
-    <div class="gallery-track">
-      <div class="gallery-item"><img src="assets/images/gallery-01.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-02.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-03.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-04.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-05.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-06.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-07.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-08.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-09.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-10.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-11.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-12.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-13.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-14.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-15.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-16.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-17.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-18.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-19.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-20.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-01.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-02.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-03.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-04.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-05.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-06.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-07.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-08.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-09.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-10.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-11.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-12.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-13.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-14.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-15.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-16.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-17.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-18.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-19.webp" loading="lazy" /></div>
-      <div class="gallery-item"><img src="assets/images/gallery-20.webp" loading="lazy" /></div>
-    </div>
-  </div>
-</section>
 
 <!-- LOGOS -->
 <section id="logos">
@@ -1821,134 +1904,28 @@ src="https://www.facebook.com/tr?id=984152100780445&amp;ev=PageView&amp;noscript
   </div>
 </section>
 
-<!-- PROGRAM -->
-<section id="program">
-  <div class="program-header">
-    <div>
-      <p class="section-label">CSL Fit Program</p>
-      <h2 class="section-title">Elige<br>tu <em>camino</em></h2>
-    </div>
-    <a href="#contact" class="btn-primary">Empezar ahora</a>
-  </div>
-  <div class="program-list">
-    <div class="program-item" onclick="toggleProgram(this)">
-      <span class="prog-num">01</span>
-      <div class="prog-info">
-        <div class="prog-title">1:1 Personal Training</div>
-        <div class="prog-sub">Presencial, a domicilio u online — sesiones individuales adaptadas a tus objetivos</div>
-      </div>
-      <span class="prog-arrow">+</span>
-      <div class="prog-expand"><div class="prog-expand-inner">
-        <div class="prog-mode-toggle" onclick="event.stopPropagation()">
-          <button type="button" class="prog-mode-btn active" onclick="setProgMode(event, this, 'presencial')">Presencial</button>
-          <button type="button" class="prog-mode-btn" onclick="setProgMode(event, this, 'online')">Online</button>
-        </div>
-        <div class="prog-mode-panel" data-mode="presencial">
-          <div class="prog-price-reveal">USD <span>60</span><small>/clase</small></div>
-          <p class="prog-detail">Sesión de entrenamiento individual completamente personalizada según tu nivel y metas, cara a cara conmigo — en mi box o a domicilio, según lo que te acomode. Escríbeme y vemos juntos tu disponibilidad y la mía. Consulta por planes de 8, 12 o más clases mensuales.</p>
-          <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%201:1%20Personal%20Training%20Presencial" data-programa="1:1 Presencial" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
-        </div>
-        <div class="prog-mode-panel" data-mode="online" style="display:none">
-          <div class="prog-price-reveal">USD <span>40</span><small>/clase</small></div>
-          <p class="prog-detail">Sesión de entrenamiento individual personalizada vía videollamada — mismo seguimiento y ajuste técnico que el 1:1 presencial, ideal si vives fuera de Chile o prefieres entrenar a distancia. Consulta por planes de 8, 12 o más clases mensuales.</p>
-          <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%201:1%20Personal%20Training%20Online" data-programa="1:1 Online" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
-        </div>
-      </div></div>
-    </div>
-    <div class="program-item" onclick="toggleProgram(this)">
-      <span class="prog-num">02</span>
-      <div class="prog-info">
-        <div class="prog-title">Weightlifting Focus</div>
-        <div class="prog-sub">Halterofilia olímpica — técnica y fuerza máxima</div>
-      </div>
-      <span class="prog-arrow">+</span>
-      <div class="prog-expand"><div class="prog-expand-inner">
-        <div class="prog-price-reveal">USD <span>100</span><small>/mes</small></div>
-        <p class="prog-detail">Planificación mensual enfocada en arranque y envión, más 2 videollamadas de 15 minutos para análisis técnico de tu video. Desarrolla potencia, técnica y fuerza con metodología Burgener Strength.</p>
-        <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%20Weightlifting%20Focus" data-programa="Weightlifting Focus" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
-      </div></div>
-    </div>
-    <div class="program-item" onclick="toggleProgram(this)">
-      <span class="prog-num">03</span>
-      <div class="prog-info">
-        <div class="prog-title">CSL-Fit Program</div>
-        <div class="prog-sub">Programas de entrenamiento online para cada objetivo</div>
-      </div>
-      <span class="prog-arrow">+</span>
-      <div class="prog-expand"><div class="prog-expand-inner">
-        <div class="prog-price-reveal">USD <span>150</span><small>/mes</small></div>
-        <p class="prog-detail">Programación online diseñada para atletas y personas con distintos objetivos. Cada plan se adapta al área de entrenamiento elegida: Weightlifting, Gimnástica, HYROX, Pérdida de peso y más. Metodología estructurada, progresiva y respaldada por más de 18 años de experiencia en el fitness de alto rendimiento.</p>
-        <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20el%20CSL-Fit%20Program" data-programa="CSL-Fit Program" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
-      </div></div>
-    </div>
-    <div class="program-item" onclick="toggleProgram(this)">
-      <span class="prog-num">04</span>
-      <div class="prog-info">
-        <div class="prog-title">CSL Mentorías</div>
-        <div class="prog-sub">Grupo de estudio de 12 semanas para coaches — nuevo grupo parte el 2 de diciembre</div>
-      </div>
-      <span class="prog-arrow">+</span>
-      <div class="prog-expand"><div class="prog-expand-inner">
-        <div class="prog-price-reveal">USD <span>99</span><small>/mes</small></div>
-        <!-- Grupo vigente: actualizar o quitar al cerrar las postulaciones -->
-        <div class="prog-cohorte">
-          <div class="c-k">Grupo de diciembre · Parte el</div>
-          <div class="c-v">Miércoles 2 de diciembre</div>
-          <div class="prog-husos">
-            <div class="hz"><span>Chile · Argentina</span><b>14:00</b></div>
-            <div class="hz"><span>Colombia · Ecuador</span><b>12:00</b></div>
-            <div class="hz"><span>Costa Rica</span><b>11:00</b></div>
-          </div>
-          <p class="prog-cierre">Postulaciones hasta el <b>lunes 30 de noviembre</b> · Máximo 5 coaches</p>
-        </div>
-        <p class="prog-detail">Doce semanas, una sesión en vivo de una hora cada semana, con un máximo de 5 coaches por grupo y una tarea entre sesiones. Siete de las doce semanas tienen detrás una certificación de CrossFit con el mismo nombre: Nutrition I, Teaching Movement, Scaling, Lesson Planning, Programming, Weightlifting L2 y Gymnastics. Grabas un video la primera semana, lo revisamos a mitad de camino y lo comparas con el final: tu avance se mide, no se supone. ¿Son varios coaches de un mismo box? Puedo abrir un grupo solo para ustedes, con un valor preferente — escríbeme y lo vemos.</p>
-        <p class="prog-temario-label">Cada sesión</p>
-        <div class="prog-blocks">
-          <div class="prog-block"><div class="t">Revisión de tarea</div></div>
-          <div class="prog-block"><div class="t">Contenido</div></div>
-          <div class="prog-block"><div class="t">Práctica y corrección</div></div>
-          <div class="prog-block"><div class="t">Cierre y tarea</div></div>
-        </div>
-        <p class="prog-temario-label">Las 12 semanas</p>
-        <ul class="prog-temario">
-          <li><span>01</span>Fitness y CrossFit</li>
-          <li><span>02</span>Nutrición</li>
-          <li><span>03</span>Enseñar, ver, corregir</li>
-          <li><span>04</span>Squats</li>
-          <li><span>05</span>Presses</li>
-          <li><span>06</span>Deadlifts</li>
-          <li><span>07</span>Escalamiento y seguridad</li>
-          <li><span>08</span>Estructura de clase</li>
-          <li><span>09</span>Programación</li>
-          <li><span>10</span>Weightlifting</li>
-          <li><span>11</span>Gymnastics</li>
-          <li><span>12</span>Integración final</li>
-        </ul>
-        <a href="https://wa.me/56977095712?text=Hola%20Luis,%20me%20interesa%20CSL%20Mentor%C3%ADas" data-programa="CSL Mentorías" class="prog-cta" target="_blank">Consultar por WhatsApp →</a>
-      </div></div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section id="how">
-  <p class="section-label">Sin vueltas</p>
-  <h2 class="section-title">Cómo<br><em>funciona</em></h2>
-  <div class="how-grid">
-    <div class="how-card">
-      <div class="how-num">01</div>
-      <div class="how-title">Escríbeme</div>
-      <div class="how-desc">Cuéntame tu objetivo, tu nivel y qué modalidad te interesa — presencial, a domicilio u online.</div>
-    </div>
-    <div class="how-card">
-      <div class="how-num">02</div>
-      <div class="how-title">Coordinamos</div>
-      <div class="how-desc">Vemos juntos tu disponibilidad y la mía, y armamos el plan que más te acomode.</div>
-    </div>
-    <div class="how-card">
-      <div class="how-num">03</div>
-      <div class="how-title">Empezamos</div>
-      <div class="how-desc">Arrancas tu programación 100% personalizada, con seguimiento y ajustes en cada sesión.</div>
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="section-label">En acción</p>
+  <h2 class="section-title">Galería<br><em>de momentos</em></h2>
+  <div class="gallery-track-wrap">
+    <div class="gallery-track">
+      <div class="gallery-item"><img src="assets/images/gallery-01.webp" loading="lazy" alt="Luis Casali dictando un curso a un grupo numeroso de atletas" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-12.webp" loading="lazy" alt="Luis Casali corrigiendo la posición de un overhead squat en un curso de coaches" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-07.webp" loading="lazy" alt="Luis Casali recibiendo un clean con barra cargada" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-11.webp" loading="lazy" alt="Luis Casali en una competencia de levantamiento olímpico" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-05.webp" loading="lazy" alt="Atleta ejecutando un movimiento gimnástico en barra" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-09.webp" loading="lazy" alt="Sesión de entrenamiento al aire libre con mancuernas" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-02.webp" loading="lazy" alt="Entrenamiento grupal con barras al atardecer" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-18.webp" loading="lazy" alt="Luis Casali junto a otros coaches tras un curso de certificación" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-01.webp" loading="lazy" alt="" aria-hidden="true" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-12.webp" loading="lazy" alt="" aria-hidden="true" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-07.webp" loading="lazy" alt="" aria-hidden="true" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-11.webp" loading="lazy" alt="" aria-hidden="true" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-05.webp" loading="lazy" alt="" aria-hidden="true" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-09.webp" loading="lazy" alt="" aria-hidden="true" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-02.webp" loading="lazy" alt="" aria-hidden="true" /></div>
+      <div class="gallery-item"><img src="assets/images/gallery-18.webp" loading="lazy" alt="" aria-hidden="true" /></div>
     </div>
   </div>
 </section>
